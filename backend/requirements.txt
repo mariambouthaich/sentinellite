@@ -1,0 +1,12 @@
+#la liste des bibliothèques Python dont le projet a besoin. 
+#pip install -r requirements.txt les installe toutes.
+fastapi #Le framework web qui permet de créer des API REST en Python
+uvicorn[standard] #Le serveur qui fait tourner FastAPI
+sqlalchemy>=2.0 #Le module qui permet de gérer la base de données
+psycopg[binary] #Le module qui connecte python  à  PostgreSQL
+alembic #Les migrations : créer et faire évoluer les tables
+pydantic-settings #Lire la configuration depuis le .env
+python-multipart #Recevoir des fichiers uploadés (import CSV)
+pandas #Analyser les logs dans le moteur de règles
+pytest #Le module qui permet de faire des tests unitaires
+httpx
