@@ -1,16 +1,19 @@
-#Il gère la connexion à PostgreSQL et contient trois éléments :
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 from app.core.config import settings
-#la connexion à la base (pool_pre_ping vérifie qu’elle est vivante avant de s’en servir).
-engine = create_engine(settings.database_url, pool_pre_ping=True)
+
+_connect_args = {"check_same_thread": False} if settings.database_url.startswith("sqlite") else {}
+engine = create_engine(settings.database_url, pool_pre_ping=True, connect_args=_connect_args)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
-#la classe dont héritent tous les modèles, pour que SQLAlchemy les connaisse.
+
+
 class Base(DeclarativeBase):
     pass
-#ouvre une session pour chaque requête HTTP, puis la ferme proprement, même en cas d’erreur.
+
+
 def get_db():
+    """Dépendance FastAPI : ouvre une session par requête, puis la ferme."""
     db = SessionLocal()
     try:
         yield db

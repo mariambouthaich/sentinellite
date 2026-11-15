@@ -1,9 +1,9 @@
-
-# Il décrit la table events, qui correspond aux lignes de ton sample_logs.csv (mêmes colonnes).
-from backend.app.core.database import Base
-from sqlalchemy import String, DateTime, JSON
-from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
+
+from sqlalchemy import JSON, DateTime, String
+from sqlalchemy.orm import Mapped, mapped_column
+
+from app.core.database import Base
 
 
 class Event(Base):
@@ -16,4 +16,4 @@ class Event(Base):
     event_type: Mapped[str] = mapped_column(String(50))
     status: Mapped[str] = mapped_column(String(20))
     source: Mapped[str] = mapped_column(String(100))
-    extra: Mapped[dict | None] = mapped_column(JSON, nullable=True) #extra accepte des informations supplémentaires en JSON
+    extra: Mapped[dict | None] = mapped_column(JSON, nullable=True)
