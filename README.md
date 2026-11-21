@@ -1,4 +1,5 @@
 # SentinelLite
+est un projet ou je veux appliquer mes connaissance en cybersecurité et developpment.
 
 Mini-SIEM : import de logs synthétiques, détection d'activités suspectes par règles, et tableau de bord d'alertes.
 
