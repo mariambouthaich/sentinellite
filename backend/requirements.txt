@@ -1,12 +1,12 @@
-fastapi
-uvicorn[standard]
-sqlalchemy>=2.0
-psycopg[binary]
-alembic
-pydantic-settings
-python-multipart
-argon2-cffi
-pyjwt
-pandas
-pytest
-httpx
+fastapi #bibliotheque python qui permet de creer des API REST
+uvicorn[standard] #bibliotheque python qui permet de lancer un serveur web asynchrone
+sqlalchemy>=2.0 #  bibliotheque python qui permet de se connecter a une base de données relationnelle
+psycopg[binary] #bibliotheque python qui permet de se connecter a une base de données postgresql
+alembic #bibliotheque python qui permet de gerer les migrations de la base de données
+pydantic-settings #bibliotheque python qui permet de gerer les settings de l'application
+python-multipart #bibliotheque python qui permet de gerer les fichiers multipart/form-data
+argon2-cffi #bibliotheque python qui permet de hasher les mots de passe
+pyjwt # bibliotheque python qui permet de generer des tokens jwt
+pandas #bibliotheque python qui permet de mannipuler les dataframes 
+pytest #bibliotheque python qui permet de faire des tests unitaires
+httpx #bibliotheque python qui permet de faire des requetes HTTP
